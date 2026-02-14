@@ -46,7 +46,7 @@ assignment-1/
 └── .gitignore
 ```
 
-```
+
 
 ## Short AI usage summary
 
