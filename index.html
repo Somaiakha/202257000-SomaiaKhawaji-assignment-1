@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somaia | Software Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">S<span class="logo-dot">.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </button>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Greeting that changes by time of day -->
+                <p class="hero-greeting" id="greeting"></p>
+                <h1 class="hero-title">
+                    I'm <span class="highlight">Somaia</span>
+                </h1>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Decorative geometric shape -->
+                <div class="hero-shape">
+                    <div class="shape-inner">
+                         <span class="shape-letter">S</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-label">01 / About</div>
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+<img src="assets/images/5801004875951836231_121.jpg" alt="Somaia" class="about-image"></div>
+                <div class="about-text">
+                    <h2 class="section-title">A little about me</h2>
+                    <p>
+                        I'm a Junior Software Engineering student at King Fahd University of Petroleum and Minerals (KFUPM).
+                        I enjoy building clean, functional web applications and working with databases to solve real-world problems.
+                    </p>
+                    <p>
+                        Beyond code, I'm interested in photography, volunteering, and exploring how technology
+                        can make campus life better. I believe in writing code that's not just functional, but
+                        thoughtfully designed and well-documented.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">University</span>
+                            <span class="detail-value">KFUPM</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Major</span>
+                            <span class="detail-value">Software Engineering</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Year</span>
+                            <span class="detail-value">Junior</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-label">02 / Skills</div>
+            <h2 class="section-title">What I work with</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frameworks & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Oracle SQL</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">Design Patterns</span>
+                        <span class="skill-tag">Database Design</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section projects" id="projects">
+    <div class="container">
+        <div class="section-label">03 / Projects</div>
+        <h2 class="section-title">Selected work</h2>
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project1Image.png" alt="Campus Route Visualizer">
+                    <div class="project-overlay">
+                        <span class="project-view">View Details →</span>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-title">Campus Course Route Visualizer</h3>
+                    <p class="project-description">
+                        An interactive tool that visualizes optimal walking routes between classes on campus,
+                        helping students plan their schedules with travel time in mind.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">Algorithms</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project2Image.png" alt="Volunteering Platform">
+                    <div class="project-overlay">
+                        <span class="project-view">View Details →</span>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-title">KFUPM Volunteering Platform</h3>
+                    <p class="project-description">
+                        A web-based platform connecting students with volunteering opportunities on campus,
+                        featuring event management, sign-ups, and hour tracking.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Web Dev</span>
+                        <span class="project-tag">Database</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <!-- Project 3 -->
+<article class="project-card">
+    <div class="project-image no-image">
+        <div class="project-fallback">
+            <span class="project-emoji">🎓</span>
+            <span class="project-label">Database System</span>
+        </div>
+
+        <div class="project-overlay">
+            <span class="project-view">View Details →</span>
+        </div>
+    </div>
+
+    <div class="project-info">
+        <h3 class="project-title">Campus Event Management Database</h3>
+        <p class="project-description">
+            A relational database system designed to manage campus events, including venues,
+            organizers, attendees, and scheduling with full CRUD operations.
+        </p>
+        <div class="project-tags">
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Streamlit</span>
+            <span class="project-tag">ER Modeling</span>
+        </div>
+    </div>
+</article>
+
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-label">04 / Contact</div>
+            <h2 class="section-title">Let's connect</h2>
+            <p class="contact-subtitle">
+                Have a question, a project idea, or just want to say hello? Feel free to reach out.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-input form-textarea" placeholder="Write your message here..." rows="5" required></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-submit" id="submitBtn">
+                        Send Message
+                    </button>
+                    <!-- Success / error feedback -->
+                    <p class="form-feedback" id="formFeedback"></p>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>ssokhawaji@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Dhahran, Saudi Arabia</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="contact-icon">🔗</span>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p>github.com/SomaiaKha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Somaia. Built with care for SWE 363.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
