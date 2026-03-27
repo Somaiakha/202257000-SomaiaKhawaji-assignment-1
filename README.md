@@ -1,34 +1,55 @@
-# Somaia's Portfolio — Assignment 1
+# Somaia's Portfolio — Assignment 2
 
-This is my first real portfolio website. I wanted it to feel clean and modern without being boring, and something I can actually keep building on later. It's all HTML, CSS, and JavaScript — no frameworks, no shortcuts. Just me trying to make something I'm proud of, with some nice animations along the way ✨.
+This is the second version of my portfolio website, built on top of Assignment 1.
+The goal this time was to make the site feel more alive — content that actually
+responds when you interact with it, real data handling, and smoother feedback
+throughout. Still plain HTML, CSS, and JavaScript. No frameworks, no shortcuts ✨
 
-## What this project is about
+---
 
-* **About section** → short intro + tagline, plus my profile photo with a glowing border and hover effect.
-* **Skills section** → languages, tools, and concepts I work with, organized in cards with gradient accents.
-* **Projects section** → three projects I've worked on, with room to add more later.
-* **Contact section** → a simple form (front-end only, but fully styled and validated).
+## What's new in Assignment 2
 
-I went with a blue gradient theme (light by default, with a dark mode toggle 🌗). The layout is responsive, so it works on phone, tablet, and desktop.
+### Dynamic Content — Tab Navigation
+The navbar now works as a **tab system**: clicking About, Skills, Projects, or
+Contact instantly shows that section and hides the rest — no scrolling needed.
+The active tab gets a pink underline so you always know where you are.
 
+### Data Handling — Contact Form Validation
+The contact form validates all three fields (name, email, message) before
+"sending". It checks that nothing is empty and that the email has a valid format
+using a regex pattern. The user always gets clear feedback — either an error
+telling them what to fix, or a success message once everything looks good.
 
-## Features
+### Animation & Transitions — Scroll Fade-in
+Sections and cards fade in smoothly as you scroll down, using
+`IntersectionObserver`. No janky scroll listeners — just clean, performant
+reveal animations that run once and get out of the way.
 
-* **Responsive design** → works on desktop, tablet, and phone.
-* **Theme toggle** → light/dark mode 
-* **Smooth scroll** → nav links glide to sections.
-* **Mobile menu** → hamburger button shows/hides nav on smaller screens.
-* **Contact form validation** → checks name/email/message before you "send" (just a demo, no backend).
-* **Time-based greeting** → hero says Good Morning/Afternoon/Evening depending on the time.
-* **Reveal on scroll** → sections fade in as you scroll down using IntersectionObserver.
-* **Scroll spy** → the nav highlights whichever section you're currently viewing.
-* **Animated hero shape** → morphing blob with an orbiting ring and my initial in the center.
-* **Glow effects** → background glows that pulse softly in the hero section.
+### Error Handling & User Feedback
+The form never leaves the user guessing:
+- Empty fields → "Please fill in all fields."
+- Bad email → "Please enter a valid email address."
+- Everything valid → "Thank you! Your message has been received." ✅
+
+---
+
+## Features (full list)
+
+- **Tab navigation** → switches sections instantly on click
+- **Form validation** → name, email, message — all checked before submit
+- **Dark / Light theme** → toggle persisted in `localStorage`
+- **Time-based greeting** → Good Morning / Afternoon / Evening / Night
+- **Smooth scroll** → nav links glide to sections (fallback for non-tab use)
+- **Mobile menu** → hamburger toggle for small screens
+- **Scroll spy** → nav highlights the active section while scrolling
+- **Fade-in on scroll** → elements reveal as they enter the viewport
+- **Animated hero shape** → morphing blob with orbiting ring
+
+---
 
 ## Project structure
-
 ```
-assignment-1/
+assignment-2/
 ├── index.html
 ├── css/
 │   └── styles.css
@@ -46,38 +67,46 @@ assignment-1/
 └── .gitignore
 ```
 
+---
 
+## How to run locally
 
-## Short AI usage summary
+1. Clone the repository:
+```bash
+   git clone https://github.com/SomaiaKha/assignment-2.git
+```
+2. Open `index.html` in any modern browser — no server needed.
 
-I used AI to help me during development:
+---
 
-* **Claude AI** → helped with the base structure (HTML, CSS, JS), responsive layout, animations (morphing shape, glow effects, fade-in on scroll, scroll spy), theme toggle logic, and polishing the overall design.
-* Also helped with documentation (this README, technical doc, and AI usage report).
+## AI usage summary
 
-I reviewed and modified everything to make sure it's correct and actually mine. Full details are in `docs/ai-usage-report.md`.
+I used **Claude AI** throughout this assignment:
+- Helped plan which interactive features to implement
+- Generated base JS logic for tab navigation and form validation
+- Suggested the `IntersectionObserver` approach for scroll animations
+- Assisted with writing this README and the technical documentation
 
-## Customize it your way
+I reviewed, tested, and modified everything to make sure I understand it and
+that it fits my project. Full details in `docs/ai-usage-report.md`.
 
-* Change my name + tagline in `index.html`.
-* Swap the profile image in `assets/images/`.
-* Replace project descriptions with your own.
-* Add more project cards by duplicating existing ones.
-* Colors live in `:root` inside `styles.css` — tweak the `--accent` variables to change the whole theme.
+---
 
-## Random notes (things I learned along the way)
+## Notes from building this
 
-* CSS Grid made laying out the projects and skills sections super easy.
-* Flexbox in the header fixed a lot of alignment headaches.
-* The mobile hamburger menu was tricky at first, but `max-height` transitions made it smooth.
-* CSS custom properties are a game-changer for theming — one set of variables controls the entire look.
-* IntersectionObserver is way better than scroll event listeners for animations.
+- Tab navigation was simpler than expected once I understood `display: none` toggling
+- The form regex for email validation is way cleaner than manual string checking
+- `IntersectionObserver` is still my favourite CSS/JS trick — much better than scroll listeners
+- `localStorage` for theme persistence is genuinely useful — wish more sites did this
+
+---
 
 ## Checklist
 
-* HTML, CSS, JS basics with clean structure.
-* Responsive across devices (desktop, tablet, mobile).
-* Interactivity (smooth scroll, theme toggle, mobile menu, form validation).
-* Extra polish (animations, glow effects, scroll spy, time-based greeting).
-* Documentation (README + technical doc + AI usage report).
-* AI usage documented transparently.
+- [x] Dynamic content (tab navigation)
+- [x] Data handling (form validation + localStorage theme)
+- [x] Animations (fade-in on scroll, hover effects)
+- [x] Error handling & user feedback (form messages)
+- [x] AI tools used and documented
+- [x] README + technical documentation complete
+- [x] Responsive across desktop, tablet, mobile

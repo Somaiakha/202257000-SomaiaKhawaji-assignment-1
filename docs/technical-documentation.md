@@ -1,66 +1,135 @@
-# Technical Documentation
+# Technical Documentation — Assignment 2
 
 ## Overview
 
-This is my personal portfolio website. I built it using HTML, CSS, and JavaScript — no frameworks. It has 4 main sections: About, Skills, Projects, and Contact. The goal was to have a clean, modern site with a warm pink gradient theme that looks good on any device and has some nice interactive touches.
+This is the second version of my personal portfolio website, built on top of
+Assignment 1. It's still plain HTML, CSS, and JavaScript — no frameworks. The
+main additions in this version are tab-based navigation, enhanced form
+validation with user feedback, and scroll-triggered animations. The design
+keeps the same warm pink/coral theme from Assignment 1, with improvements to
+interactivity and user experience throughout.
+
+---
 
 ## Project Structure
 
-Here's how the project is organized:
-
-* `index.html` → the main page with all the content (hero, about, skills, projects, contact, footer).
-* `css/styles.css` → all the styling: layout, color theme with CSS custom properties, responsive rules, hover effects, glow animations, and the morphing hero shape.
-* `js/script.js` → interactive features: smooth scrolling, dark/light theme toggle, mobile hamburger menu, form validation, time-based greeting, scroll animations, and scroll spy for active nav links.
-* `assets/images/` → where images go (profile photo).
+* `index.html` → the main page with all content (hero, about, skills, projects,
+  contact, footer).
+* `css/styles.css` → all styling: layout, CSS custom properties for theming,
+  responsive rules, hover effects, animations, and the morphing hero shape.
+* `js/script.js` → all interactivity: tab navigation, form validation, theme
+  toggle, smooth scroll, mobile menu, scroll spy, time-based greeting, and
+  fade-in animations.
+* `assets/images/` → profile photo and project images.
 * `docs/` → this technical doc + the AI usage report.
 * `README.md` → project description and setup instructions.
 * `.gitignore` → ignores system/config files.
 
+---
+
+## New Features in Assignment 2
+
+### Tab Navigation
+The navbar now functions as a tab system. Clicking a nav link calls
+`showSection(id)`, which hides all `<section>` elements using `display: none`
+and shows only the selected one. The active button gets an `active` class that
+applies a pink underline via CSS. This replaces the scroll-based navigation
+from Assignment 1 for a cleaner, app-like feel.
+```javascript
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+```
+
+### Form Validation
+The contact form validates three fields before the user can "send":
+- Name → must not be empty
+- Email → must match a regex pattern (`/^[^\s@]+@[^\s@]+\.[^\s@]+$/`)
+- Message → must not be empty
+
+Feedback is shown in a `<p id="formFeedback">` element below the button.
+On error, the text turns red and describes exactly what to fix. On success,
+a confirmation message appears and the form fields clear automatically.
+
+### localStorage Theme Persistence
+The dark/light theme preference is saved to `localStorage` on every toggle and
+loaded on page start. This means the user's choice survives page reloads.
+```javascript
+localStorage.setItem('theme', next);
+const savedTheme = localStorage.getItem('theme') || 'light';
+```
+
+---
+
 ## Design and Responsiveness
 
-* **CSS Grid** → used for the hero layout (two columns), about section, skills cards, projects grid, and contact section.
-* **Flexbox** → used in the navbar, button groups, skill tags, and contact info items.
-* **Desktop view** → two-column layouts for hero, about, and contact sections.
-* **Tablet (≤ 900px)** → collapses into single-column layouts, hero shape gets smaller.
-* **Mobile (≤ 640px)** → hamburger menu replaces nav links, project and skill cards stack vertically, hero shape moves to top.
-* **`clamp()`** → used for fluid typography so headings scale smoothly between screen sizes.
+* **CSS Grid** → hero layout, about section, skills cards, projects grid,
+  contact section.
+* **Flexbox** → navbar, button groups, skill tags, contact info items.
+* **Desktop** → two-column layouts for hero, about, and contact.
+* **Tablet (≤ 900px)** → single-column layouts, hero shape scales down.
+* **Mobile (≤ 640px)** → hamburger menu, cards stack vertically.
+* **`clamp()`** → fluid typography that scales smoothly between breakpoints.
+
+---
 
 ## Theming System
 
-* Built with **CSS custom properties** (variables) defined in `:root`.
-* Dark mode is activated by setting `data-theme="dark"` on the `<html>` element.
-* One set of variables controls everything — backgrounds, text colors, accents, borders, shadows, and glows.
-* The theme choice is saved in `localStorage` so it persists across page reloads.
-* Color scheme: warm pink-to-coral gradient with soft rose accents for light mode, with adjusted tones for dark mode.
+* CSS custom properties defined in `:root` control all colors, backgrounds,
+  accents, borders, and shadows.
+* Dark mode is activated by setting `data-theme="dark"` on `<html>`.
+* Theme preference is saved in `localStorage` and restored on load.
+* Color scheme: warm pink-to-coral gradient for light mode, adjusted tones
+  for dark mode.
 
-## Interactivity (JavaScript Features)
+---
 
-* **Time-based greeting** → the hero section says Good Morning, Afternoon, Evening, or Night depending on the visitor's local time.
-* **Dark/Light theme toggle** → switches between themes and remembers the choice with `localStorage`.
-* **Smooth scroll** → clicking nav links glides the page to the section instead of jumping.
-* **Mobile menu toggle** → hamburger icon opens/closes the nav menu on small screens. The icon animates into an X when open.
-* **Active nav highlighting** → as you scroll, the nav link for the current section gets highlighted automatically (scroll spy).
-* **Form validation** → checks that name, email, and message aren't empty, and validates email format with regex. Shows success or error messages. (Demo only, no actual sending).
-* **Reveal on scroll** → sections fade in and slide up as you scroll down using `IntersectionObserver`. Each element only animates once.
+## JavaScript Features (full list)
+
+* **Tab navigation** → shows/hides sections on nav click, updates active state.
+* **Form validation** → validates name, email (regex), and message; shows
+  error or success feedback; clears fields on success.
+* **localStorage theme** → persists dark/light preference across reloads.
+* **Time-based greeting** → displays Good Morning / Afternoon / Evening / Night
+  based on the visitor's local time.
+* **Smooth scroll** → nav links glide to sections (fallback behavior).
+* **Mobile menu toggle** → hamburger opens/closes nav on small screens,
+  icon animates to X when open.
+* **Scroll spy** → highlights the nav link for the section currently in view.
+* **Fade-in on scroll** → elements reveal with opacity + translateY using
+  `IntersectionObserver`. Each element animates only once.
+
+---
 
 ## Hero Shape Animation
 
-* The blob shape in the hero uses `border-radius` animation (`morphShape` keyframes) to continuously change shape.
-* A dashed ring orbits around it using `spinSlow` rotation animation.
-* The inner circle has a glassmorphism effect with `backdrop-filter: blur`.
-* Background glow effects pulse using `radial-gradient` and the `pulseGlow` animation.
+* The blob uses `border-radius` keyframe animation (`morphShape`) to
+  continuously change shape.
+* A dashed ring orbits it using a `spinSlow` rotation animation.
+* The inner circle uses `backdrop-filter: blur` for a glassmorphism effect.
+* Background glows pulse using `radial-gradient` and `pulseGlow` keyframes.
+
+---
 
 ## Accessibility
 
-* **Semantic HTML** → proper use of `<nav>`, `<section>`, `<article>`, `<footer>`.
-* **ARIA labels** → interactive buttons (theme toggle, mobile menu) have `aria-label` attributes.
-* **Form labels** → every input has a `<label>` element for screen readers.
-* **Color contrast** → warm text on appropriate backgrounds with pink/coral accents that meet readability needs.
+* **Semantic HTML** → `<nav>`, `<section>`, `<article>`, `<footer>`.
+* **ARIA labels** → theme toggle and mobile menu buttons have `aria-label`.
+* **Form labels** → every input has a linked `<label>` for screen readers.
+* **Color contrast** → warm text on appropriate backgrounds; pink/coral
+  accents maintain readability in both light and dark modes.
+
+---
 
 ## Known Limitations
 
-* The contact form is demo-only — it doesn't actually send data anywhere.
-* Project images are emoji placeholders — need real screenshots eventually.
+* The contact form is demo-only — it does not send data anywhere.
+* Project images are placeholders — real screenshots needed eventually.
 * No SEO meta tags or image optimization yet.
-* The Google Fonts load externally, so the site needs internet to display the custom fonts.
-* `localStorage` for theme preference won't work in incognito/private browsing on some browsers.
+* Google Fonts load externally — custom fonts require an internet connection.
+* `localStorage` may not persist in private/incognito browsing on some browsers.
+* Tab navigation and scroll spy can conflict — switching tabs resets scroll
+  position, which may briefly affect the active nav highlight.

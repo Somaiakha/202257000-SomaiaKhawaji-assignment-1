@@ -1,48 +1,96 @@
-# AI Usage Report
+# AI Usage Report — Assignment 2
 
 ## Tools I Used
 
-* I used **Claude AI** as a helper during this project — mostly for asking questions, getting unstuck, and double-checking my work.
+* I used **Claude AI** as my main helper throughout this assignment — for asking
+  questions, getting unstuck, understanding new concepts, and reviewing my work
+  before submitting.
+
+---
 
 ## How I Used It
 
-* When I wasn't sure how to structure my HTML sections, I asked Claude for guidance on best practices and then wrote the code myself.
-* For CSS, I had an idea of what I wanted but needed help figuring out how to do things like the theme toggle with CSS variables and responsive breakpoints. Claude pointed me in the right direction and I implemented it.
-* For JavaScript, I knew what features I wanted (dark mode, smooth scroll, form validation) but wasn't sure about the best approach. Claude explained concepts like IntersectionObserver and localStorage, and I applied them in my own code.
-* I also asked Claude to review my documentation drafts and suggest improvements, then I rewrote everything in my own words.
+* When I wasn't sure how to turn the existing navbar into a working tab system,
+  I asked Claude to explain the approach. I then wrote the logic myself and
+  adjusted it to match my existing CSS classes.
+* For the form validation, I knew what I wanted to check (empty fields, email
+  format) but wasn't sure about the cleanest way to do it in JS. Claude explained
+  regex patterns and I applied them in my own code.
+* I asked Claude to explain how `IntersectionObserver` works for the fade-in
+  animations — then I implemented and fine-tuned the thresholds myself.
+* I also used Claude to review my README and documentation drafts, then rewrote
+  everything in my own words.
+
+---
 
 ## Use Cases
 
-* **HTML**: Asked about semantic structure and accessibility — then I built the sections myself.
-* **CSS**: Got help understanding Grid vs Flexbox for different layouts, and how CSS custom properties work for theming. I chose the colors and designed the look on my own.
-* **JavaScript**: Asked how to approach specific features. Claude explained the logic and I wrote the implementation.
-* **Debugging**: When my CSS wasn't loading or the mobile menu wasn't working, I described the problem and Claude helped me figure out what was wrong (turned out to be file path issues).
-* **Documentation**: Asked for feedback on my drafts and rewrote them based on suggestions.
+* **Tab Navigation**: Asked about the best way to show/hide sections on click.
+  Claude explained the `display: none` toggling approach and I built it myself,
+  keeping it consistent with my existing nav structure.
+* **Form Validation**: Got help understanding how to use regex for email
+  checking. I wrote the full validation function and chose what error messages
+  to show.
+* **localStorage**: Asked how to persist the dark/light theme across page
+  reloads. Claude explained the concept and I integrated it into my existing
+  theme toggle.
+* **Animations**: Asked about `IntersectionObserver` for scroll-triggered
+  effects. Claude walked me through the API and I chose which elements to
+  animate and how.
+* **Debugging**: When my tab switching was affecting the scroll spy feature,
+  I described the conflict and Claude helped me think through the fix. I
+  implemented the solution myself.
+* **Documentation**: Asked for feedback on my README draft and rewrote it
+  based on the suggestions.
+
+---
 
 ## Benefits
 
-* Having someone to ask questions to made the learning process faster — instead of spending hours stuck, I could get a quick explanation and move on.
-* It helped me discover new techniques like IntersectionObserver that I wouldn't have found on my own easily.
-* Debugging went faster because I could describe my problem and get pointed to the right area instead of guessing.
+* Having a place to ask specific questions made learning faster — instead of
+  spending hours on one concept, I could get a clear explanation and keep moving.
+* I discovered cleaner JS patterns (like regex for validation and
+  `IntersectionObserver` for animations) that I wouldn't have found as quickly
+  on my own.
+* Debugging was less frustrating because I could describe what was happening
+  and get pointed in the right direction instead of guessing.
+
+---
 
 ## Challenges
 
-* Sometimes the explanations were too general, so I had to ask follow-up questions to get something that actually fit my project.
-* I had to make sure I wasn't just copying suggestions — I forced myself to understand the code before using it.
-* Early on, I relied on it too much for CSS, but then I started experimenting on my own and only asked when I was really stuck.
+* Sometimes suggestions were too general, so I had to ask follow-up questions
+  to get something that actually fit my existing code structure.
+* I had to be careful not to just accept the first suggestion — I made myself
+  understand the logic before using anything.
+* A few times the suggested approach didn't match my CSS class names, so I had
+  to adapt the code rather than use it as-is.
+
+---
 
 ## Learning Outcomes
 
-* I learned CSS Grid, Flexbox, and responsive design hands-on by building this site.
-* I understood how CSS custom properties make theming much easier.
-* I got comfortable with JavaScript concepts like event listeners, DOM manipulation, and IntersectionObserver.
-* I learned that file structure and paths matter a lot — a lesson I learned the hard way when nothing was loading.
-* Most importantly, I learned how to ask the right questions to get useful help, which is a skill on its own.
+* I learned how tab-based navigation works under the hood — it's simpler than
+  I expected once I understood the show/hide pattern.
+* I got comfortable writing form validation logic from scratch, including regex.
+* I understand `IntersectionObserver` well enough now that I could use it again
+  without looking it up.
+* I learned that small conflicts between features (like tab switching vs scroll
+  spy) require thinking about the overall JS flow, not just fixing one function.
+* I got better at asking specific questions — describing my exact problem and
+  existing code rather than asking generally.
+
+---
 
 ## How I Modified AI Suggestions Responsibly
 
-* I never copy-pasted anything directly — I always read the suggestion, understood it, and then wrote my own version.
-* All the content (text, project descriptions, skills) is mine. Claude never wrote my personal content.
-* I chose the design direction, colors, and layout myself. When I didn't like something, I changed it until it felt right.
-* I tested everything manually across different screen sizes and fixed things on my own.
-* I used Claude the same way I'd use a tutor — to learn, not to get answers handed to me.
+* I never copy-pasted anything directly — I read every suggestion, made sure
+  I understood it, and then wrote my own version that fit my project.
+* All personal content (bio, project descriptions, skills) is mine. Claude
+  never wrote anything about me.
+* I chose which features to build, how they look, and how they behave. When a
+  suggestion didn't feel right for my site, I changed it.
+* I tested everything manually across desktop, tablet, and mobile and fixed
+  issues on my own.
+* I used Claude the same way I'd use a tutor — to understand concepts and
+  get unstuck, not to get the work done for me.
